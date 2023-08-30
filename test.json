@@ -11,6 +11,10 @@
     "dark-3": {
       "value": "#fd14ff",
       "type": "color"
+    },
+    "fw0": {
+      "value": "0",
+      "type": "fontWeights"
     }
   },
   "$themes": [],
