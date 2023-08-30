@@ -13,36 +13,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
         
-      - name: Transform JSON
-        run: |
-          cat test.json | jq '.' > transformed.json
-          
-      - name: Create New File
-        run: |
-          echo "This is the transformed content" > test.txt
-          
-      - name: Commit and Push Changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Automated: Add transformed file"
-          commit_user_name: "GitHub Actions"
-          commit_user_email: "jery-jens@users.noreply.github.com"
-          access_token: ${{ secrets.ACCESS_TOKEN }}
-name: Transform JSON on Push
-
-on:
-  push:
-    paths:
-      - '**.json'
-
-jobs:
-  transform_json:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-        
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
