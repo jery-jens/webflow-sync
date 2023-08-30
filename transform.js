@@ -8,4 +8,4 @@ const css = Object.keys(data.Primitives).map(key => {
     return `--${key}: ${item.value};`;
 }).join('\n');
 
-writeFileSync('test.css', css, 'utf8');
+writeFileSync('test.css', `:root {\n${css}\n}`, 'utf8');
