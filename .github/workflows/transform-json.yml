@@ -28,3 +28,45 @@ jobs:
           commit_user_name: "GitHub Actions"
           commit_user_email: "jery-jens@users.noreply.github.com"
           access_token: ${{ secrets.ACCESS_TOKEN }}
+name: Transform JSON on Push
+
+on:
+  push:
+    paths:
+      - '**.json'
+
+jobs:
+  transform_json:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          
+      - name: Install jq
+        run: |
+          sudo apt-get update
+          sudo apt-get install jq
+          
+      - name: Transform JSON
+        run: |
+          # Replace 'input.json' with the actual path to your JSON file
+          cat test.json | jq '.' > transformed.json
+          
+      - name: Create New File
+        run: |
+          # Create a new file with the transformed content
+          echo "This is the transformed content" > newfile.txt
+          
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "actions@users.noreply.github.com"
+          git config --local user.name "GitHub Actions"
+          git add transformed.json newfile.txt
+          git commit -m "Automated: Add transformed file"
+          git push
