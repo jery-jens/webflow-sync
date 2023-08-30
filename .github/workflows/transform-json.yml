@@ -69,4 +69,4 @@ jobs:
           git config --local user.name "GitHub Actions"
           git add transformed.json newfile.txt
           git commit -m "Automated: Add transformed file"
-          git pushh
+          git push
