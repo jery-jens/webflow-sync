@@ -38,3 +38,4 @@ jobs:
           git add transformed.json newfile.txt
           git commit -m "Automated: Add transformed file"
           git push
+e
