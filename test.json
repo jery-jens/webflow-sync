@@ -1,14 +1,14 @@
 {
   "Primitives": {
-    "blue": {
+    "dark-1": {
       "value": "#4785f1",
       "type": "color"
     },
-    "red": {
+    "dark-2": {
       "value": "#e02222",
       "type": "color"
     },
-    "yellow": {
+    "dark-3": {
       "value": "#ffb318",
       "type": "color"
     }
