@@ -4,37 +4,31 @@ on:
   push:
     paths:
       - '**.json'
+      - 'transform.js'
 
 jobs:
   transform_json:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-        
-      - name: Set up Node.js
+
+      - name: Install Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '14'
-          
-      - name: Install jq
-        run: |
-          sudo apt-get update
-          sudo apt-get install jq
-          
-      - name: Transform JSON
-        run: |
-          cat test.json | jq '.' > transformed.json
-          
-      - name: Create New File
-        run: |
-          echo "This is the transformed content" > newfile.txt
-          
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Transformation Script
+        run: node transform.js
+
       - name: Commit and Push Changes
         run: |
-          git config --local user.email "jens-jery@users.noreply.github.com"
+          git config --local user.email "actions@users.noreply.github.com"
           git config --local user.name "GitHub Actions"
-          git add transformed.json newfile.txt
-          git commit -m "Automated: Add transformed file"
+          git add transformed.json
+          git commit -m "Automated: Update transformed JSON"
           git push

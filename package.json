@@ -1,0 +1,22 @@
+{
+  "name": "webflowsync",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jery-jens/webflow-sync.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jery-jens/webflow-sync/issues"
+  },
+  "homepage": "https://github.com/jery-jens/webflow-sync#readme",
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}
