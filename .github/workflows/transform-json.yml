@@ -26,5 +26,5 @@ jobs:
         with:
           commit_message: "Automated: Add transformed file"
           commit_user_name: "GitHub Actions"
-          commit_user_email: "actions@users.noreply.github.com"
+          commit_user_email: "jery-jens@users.noreply.github.com"
           access_token: ${{ secrets.ACCESS_TOKEN }}
