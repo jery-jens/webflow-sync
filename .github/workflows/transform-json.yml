@@ -5,6 +5,7 @@ on:
     paths:
       - '**.json'
       - 'transform.js'
+      - '**.css'
 
 jobs:
   transform_json:
@@ -27,7 +28,7 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          git config --local user.email "actions@users.noreply.github.com"
+          git config --local user.email "jens-jery@users.noreply.github.com"
           git config --local user.name "GitHub Actions"
           git add test.css
           git commit -m "Automated: Update transformed CSS"
