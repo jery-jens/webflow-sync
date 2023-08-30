@@ -29,6 +29,6 @@ jobs:
         run: |
           git config --local user.email "actions@users.noreply.github.com"
           git config --local user.name "GitHub Actions"
-          git add transformed.json
-          git commit -m "Automated: Update transformed JSON"
+          git add test.css
+          git commit -m "Automated: Update transformed CSS"
           git push
