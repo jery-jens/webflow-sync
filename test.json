@@ -1,3 +1,14 @@
 {
-    
+  "Primitives": {
+    "blue": {
+      "value": "#3b7aff",
+      "type": "color"
+    }
+  },
+  "$themes": [],
+  "$metadata": {
+    "tokenSetOrder": [
+      "Primitives"
+    ]
+  }
 }
